@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "15,12,14,9,10,17,16",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "605,492,552,369,430,711,658",
-                        "endColumns": "52,58,52,60,60,62,52",
-                        "endOffsets": "653,546,600,425,486,769,706"
+                        "startLines": "10,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "403,461",
+                        "endColumns": "57,55",
+                        "endOffsets": "456,512"
                     },
                     "to": {
-                        "startLines": "422,423,483,495,496,505,506",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "26290,26343,31921,32791,32852,33500,33563",
-                        "endColumns": "52,58,52,60,60,62,52",
-                        "endOffsets": "26338,26397,31969,32847,32908,33558,33611"
+                        "startLines": "327,328",
+                        "startColumns": "4,4",
+                        "startOffsets": "19772,19830",
+                        "endColumns": "57,55",
+                        "endOffsets": "19825,19881"
                     }
                 },
                 {
@@ -110,7 +110,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "11",
                         "startColumns": "4",
@@ -237,23 +237,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "10,11",
-                        "startColumns": "4,4",
-                        "startOffsets": "403,461",
-                        "endColumns": "57,55",
-                        "endOffsets": "456,512"
-                    },
-                    "to": {
-                        "startLines": "327,328",
-                        "startColumns": "4,4",
-                        "startOffsets": "19772,19830",
-                        "endColumns": "57,55",
-                        "endOffsets": "19825,19881"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ADITI\\.gradle\\caches\\transforms-2\\files-2.1\\c1cd4304d7d5a9232f3f78c6c35591c3\\play-services-maps-9.4.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -340,6 +323,23 @@
                         "startOffsets": "24121,27307,27414,27523",
                         "endColumns": "49,106,108,67",
                         "endOffsets": "24166,27409,27518,27586"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "15,12,14,9,10,17,16",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "605,492,552,369,430,711,658",
+                        "endColumns": "52,58,52,60,60,62,52",
+                        "endOffsets": "653,546,600,425,486,769,706"
+                    },
+                    "to": {
+                        "startLines": "422,423,483,495,496,505,506",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "26290,26343,31921,32791,32852,33500,33563",
+                        "endColumns": "52,58,52,60,60,62,52",
+                        "endOffsets": "26338,26397,31969,32847,32908,33558,33611"
                     }
                 }
             ]

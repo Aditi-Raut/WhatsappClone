@@ -32,147 +32,89 @@ import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener,View.OnKeyListener {
+public class MainActivity extends AppCompatActivity  {
 
-  Boolean signUpModeActive = true;
-  TextView logInTextView;
-  EditText usernameEditText;
-  EditText passwordEditText;
+  boolean loginModeActive = false;
 
-  //To switch to screen with the list of users after login or sign up or if user is already logged in.
-  public void showUserList()
+  public void  redirectlogin()
   {
-    Intent intent = new Intent(getApplicationContext(),UserListActivity.class);
-    startActivity(intent);
-  }
-
-  //For Keyboard settings.
-  //When enter key is clicked after entering password, automatically submit the form.
-  @Override
-  public boolean onKey(View view, int i, KeyEvent keyEvent) {
-    if(i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN)
+    if(ParseUser.getCurrentUser() != null)
     {
-      signUpClick(view);
-    }
-
-    return false;
-  }
-
-  //To toggle between log in and signUp.
-  @Override
-  public void onClick(View view) {
-    if(view.getId() == R.id.logInTextView)
-    {
-      Button signUpButton = (Button) findViewById(R.id.signUpButton);
-      if(signUpModeActive)
-      {
-        //Switching From signup to login
-        signUpModeActive = false;
-        signUpButton.setText("Log In");
-        logInTextView.setText("or Sign Up");
-      }
-      else
-      {
-        //Switching from login to signup
-        signUpModeActive = true;
-        signUpButton.setText("Sign Up");
-        logInTextView.setText("or Log In");
-      }
-
-    }
-    else if(view.getId() == R.id.logoImageView || view.getId() == R.id.backgroundLayout)
-    {
-      //For Keyboard settings.
-      //When touched on any other part of screen close the keyboard
-      InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-      inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+      Intent intent = new Intent(getApplicationContext(),UserListActivity.class);
+      startActivity(intent);
     }
   }
 
-  //When signup or login buttom is clicked
-  public void signUpClick(View view)
+  public void toggleLoginMode(View view)
   {
-
-    if(usernameEditText.getText().toString().matches("") || passwordEditText.getText().toString().matches(""))
+    Button signUpButton = (Button) findViewById(R.id.signUpButton);
+    TextView toggleLoginModeTextView = (TextView) findViewById(R.id.toggleLogInModeTextView);
+    if(loginModeActive)
     {
-      //If username or password is emmpty show error
-      Toast.makeText(this,"A username and a Password are required",Toast.LENGTH_SHORT).show();
+      loginModeActive = false;
+      signUpButton.setText("Sign Up");
+      toggleLoginModeTextView.setText("Or Log In");
     }
     else
     {
-      if(signUpModeActive) {
-        //Signup the User
-        ParseUser user = new ParseUser();
-        user.setUsername(usernameEditText.getText().toString());
-        user.setPassword(passwordEditText.getText().toString());
+      loginModeActive = true;
+      signUpButton.setText("Log In");
+      toggleLoginModeTextView.setText("Or Sign Up");
 
-        user.signUpInBackground(new SignUpCallback() {
-          @Override
-          public void done(ParseException e) {
-            if (e == null) {
-              Log.i("Signup", "Success");
-              showUserList();    //Move to next activity
-            } else {
-              //Show error
-              Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-          }
-        });
-      }
-      else
-      {
-        //Login the user
-        ParseUser.logInInBackground(usernameEditText.getText().toString(), passwordEditText.getText().toString(), new LogInCallback() {
-          @Override
-          public void done(ParseUser user, ParseException e) {
-            if(user!=null)
-            {
-              Log.i("Logged in","okay");
-              showUserList();
-            }
-            else
-            {
-              Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-          }
-        });
-      }
     }
-
   }
 
+  public void signUpClick(View view)
+  {
+    EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+    EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+
+    if(loginModeActive)
+    {
+      ParseUser.logInInBackground(usernameEditText.getText().toString(), passwordEditText.getText().toString(), new LogInCallback() {
+        @Override
+        public void done(ParseUser user, ParseException e) {
+          if(e==null)
+          {
+            Log.i("Info","Logged In");
+            redirectlogin();
+          }
+          else
+          {
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+          }
+        }
+      });
+    }
+    else {
+
+      ParseUser user = new ParseUser();
+      user.setUsername(usernameEditText.getText().toString());
+      user.setPassword(passwordEditText.getText().toString());
+
+      user.signUpInBackground(new SignUpCallback() {
+        @Override
+        public void done(ParseException e) {
+          if (e == null) {
+            Log.i("Info", "User Signed Up");
+            redirectlogin();
+          } else {
+            Toast.makeText(MainActivity.this, e.getMessage().substring(e.getMessage().toString().indexOf(" ")), Toast.LENGTH_SHORT).show();
+          }
+        }
+      });
+    }
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    setTitle("InstaClone");
+    redirectlogin();
 
-    logInTextView = (TextView) findViewById(R.id.logInTextView);
-    logInTextView.setOnClickListener(this);
+    setTitle("WhatsApp");
 
-    usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-    passwordEditText = (EditText) findViewById(R.id.passwordEditText);
-    ImageView logoImageView = (ImageView) findViewById(R.id.logoImageView);
-    RelativeLayout backgroundLayout = (RelativeLayout) findViewById(R.id.backgroundLayout);
-
-    //To close keyboard.
-    logoImageView.setOnClickListener(this);
-    backgroundLayout.setOnClickListener(this);
-
-
-    //To enter automatically after filling the password.
-    passwordEditText.setOnKeyListener(this);
-
-    //If already signed in. Go move to next activity
-    if(ParseUser.getCurrentUser() !=null)
-    {
-      showUserList();
-    }
-
-
-    ParseAnalytics.trackAppOpenedInBackground(getIntent());
   }
 
 }

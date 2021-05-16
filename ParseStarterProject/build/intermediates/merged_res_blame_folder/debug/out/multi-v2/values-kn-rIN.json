@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
+            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ADITI\\.gradle\\caches\\transforms-2\\files-2.1\\0d75f094f8efc1c7163bbf4e1867657c\\mediarouter-v7-23.0.0\\res\\values-kn-rIN\\values-kn-rIN.xml",

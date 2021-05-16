@@ -18,24 +18,24 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
+    <TextView
+        android:id="@+id/toggleLogInModeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signUpButton"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
-        app:srcCompat="@drawable/instagram" />
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="158dp"
+        android:clickable="true"
+        android:onClick="toggleLoginMode"
+        android:text="or Log In" />
 
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logoImageView"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName" />
@@ -63,17 +63,4 @@
         android:onClick="signUpClick"
         android:text="Sign Up" />
 
-    <TextView
-        android:id="@+id/logInTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordEditText"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:text="or Log In"
-        android:textColor="#03A9F4"
-        android:textSize="20sp" />
 </RelativeLayout>

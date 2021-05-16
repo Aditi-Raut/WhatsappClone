@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
+            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ADITI\\.gradle\\caches\\transforms-2\\files-2.1\\b6ebc546c5fde1f350dd5a72962023f9\\play-services-wallet-9.4.0\\res\\values-sl\\values.xml",

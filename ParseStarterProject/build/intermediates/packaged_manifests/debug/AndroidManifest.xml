@@ -36,7 +36,9 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.parse.starter.UserFeedActivity" />
+        <activity
+            android:name="com.parse.starter.ChatActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.parse.starter.UserListActivity" />
         <activity
             android:name="com.parse.starter.MainActivity"

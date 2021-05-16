@@ -807,7 +807,6 @@ drawable ic_plusone_standard_off_client
 drawable ic_plusone_tall_off_client
 drawable ic_setting_dark
 drawable ic_setting_light
-drawable instagram
 drawable mr_ic_cast_dark
 drawable mr_ic_cast_light
 drawable mr_ic_media_route_connecting_mono_dark
@@ -928,6 +927,8 @@ id cast_featurehighlight_view
 id cast_notification_id
 id center
 id chains
+id chatEditText
+id chatListView
 id checkbox
 id chronometer
 id classic
@@ -991,13 +992,10 @@ id left
 id light
 id line1
 id line3
-id linearLayout
 id listMode
 id listView
 id list_item
 id loading_indicator
-id logInTextView
-id logoImageView
 id logo_only
 id logout
 id main_container
@@ -1059,6 +1057,7 @@ id seek_bar
 id seek_bar_controls
 id select_dialog_listview
 id selectionDetails
+id sendChatButon
 id settings
 id share
 id shortcut
@@ -1101,6 +1100,7 @@ id title
 id title_bar
 id title_template
 id title_view
+id toggleLogInModeTextView
 id toolbar
 id top
 id topPanel
@@ -1144,8 +1144,8 @@ layout abc_screen_toolbar
 layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
+layout activity_chat
 layout activity_main
-layout activity_user_feed
 layout activity_user_list
 layout cast_expanded_controller_activity
 layout cast_help_text

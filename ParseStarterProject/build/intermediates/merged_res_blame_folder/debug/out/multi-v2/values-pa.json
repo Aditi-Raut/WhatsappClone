@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
+            "outputFile": "C:\\Users\\ADITI\\AndroidStudioProjects\\WhatsappClone\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ADITI\\.gradle\\caches\\transforms-2\\files-2.1\\793491c6c0b38867a64138a016a7552a\\play-services-cast-framework-9.4.0\\res\\values-pa\\values.xml",
